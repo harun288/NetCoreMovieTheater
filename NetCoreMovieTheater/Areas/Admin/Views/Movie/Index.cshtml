@@ -1,0 +1,30 @@
+﻿@model List<Movie>
+@{ ViewData["Title"] = "Index";
+                Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml"; }
+
+
+<div class="container">
+    <div class="row">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Movie Name</th>
+                    <th>Description</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var movie in Model)
+                {
+        <tr>
+            <td>@movie.MovieName</td>
+            <td>@movie.Description</td>
+            <td>
+                @Html.ActionLink("Remove", "RemoveMovie", new { Id = movie.Id }, new { @class = "btn btn-danger" })
+                @Html.ActionLink("Update", "UpdateMovie", new { Id = movie.Id }, new { @class = "btn btn-warning" })
+            </td>
+        </tr>}
+            </tbody>
+        </table>
+    </div>
+</div>

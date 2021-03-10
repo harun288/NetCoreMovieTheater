@@ -1,0 +1,27 @@
+﻿@model Genre
+@{
+    ViewData["Title"] = "AddGenre";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div asp-validation-summary="All">
+
+            </div>
+            <form asp-action="AddGenre" method="post">
+                <div class="form-group">
+                    <label asp-for="GenreName">Genre Name</label>
+                    <input name="GenreName" type="text" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <input name="Description" type="text" class="form-control" />
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+        </div>
+    </div>    
+</div>
+

@@ -1,0 +1,34 @@
+﻿@model Movie
+@{
+    ViewData["Title"] = "AddMovie";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    List<Genre> genre = ViewBag.Genre;
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div asp-validation-summary="All">
+
+            </div>
+            <form asp-action="AddMovie" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label asp-for="MovieName">Movie Name</label>
+                    <input name="MovieName" type="text" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <input name="Description" type="text" class="form-control" />
+                </div>
+                <div class="form-group">
+                    @foreach (var item in genre)
+                    {
+                        <input type="checkbox" name="genresId" value="@item.Id">
+                        <label for="vehicle1"> @item.GenreName</label><br>
+                    }
+                </div>
+                <button type="submit" class="btn btn-primary mt-2">Save</button>
+            </form>
+        </div>
+    </div>
+</div>

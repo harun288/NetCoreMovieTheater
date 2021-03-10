@@ -1,0 +1,23 @@
+﻿@model Session
+@{
+    ViewData["Title"] = "AddSession";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div asp-validation-summary="All">
+
+            </div>
+            <form asp-action="AddSession" method="post">
+                <div class="form-group">
+                    <label asp-for="SessionTime">Session Time</label>
+                    <input name="SessionTime" type="time" class="form-control" />
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
