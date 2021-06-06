@@ -1,3 +1,5 @@
 # NetCoreMovieTheater
 SELAM
-herkes
+herkes    						
+no
+yes
