@@ -1,0 +1,3 @@
+# NetCoreMovieTheater
+SELAM
+herkes
